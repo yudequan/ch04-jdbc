@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
-    private UserInfoDao dao;
+    private final UserInfoDao dao;
     @Override
     public UserInfo findUserInfo(String username) {
         UserInfo userinfo = dao.findByUsername(username);
