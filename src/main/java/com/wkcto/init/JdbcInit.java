@@ -2,6 +2,7 @@ package com.wkcto.init;
 
 import com.wkcto.dao.UserInfoDao;
 import com.wkcto.entity.UserInfo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,11 +14,10 @@ import javax.annotation.PostConstruct;
  * @author 梁超
  * @create 2021-04-12 17:09
  */
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 @Component
 public class JdbcInit {
-
-    @Autowired
-    private UserInfoDao dao;
+    private final UserInfoDao dao;
 
     @PostConstruct
     public void init(){

@@ -2,6 +2,7 @@ package com.wkcto.provider;
 
 import com.wkcto.dao.UserInfoDao;
 import com.wkcto.entity.UserInfo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,11 +19,10 @@ import java.util.List;
  * @author 梁超
  * @create 2021-04-12 17:22
  */
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 @Component("MyUserDetailService")
 public class MyUserDetailService implements UserDetailsService {
-
-    @Autowired
-    private UserInfoDao dao;
+    private final UserInfoDao dao;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

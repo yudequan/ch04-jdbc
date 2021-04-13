@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2021-04-09 17:31
  */
 @RestController
-public class Hellocontroller {
+public class HelloController {
     @RequestMapping("hello")
     public String sayHello(){
         return "使用内存中的用户信息";
